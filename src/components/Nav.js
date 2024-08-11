@@ -1,6 +1,6 @@
 function Nav() {
     return (
-        <nav>
+        <nav className="App-nav">
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#menu">Menu</a></li>
