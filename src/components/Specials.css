@@ -1,0 +1,29 @@
+.Specials {
+    padding: 3rem;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.Specials h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.Special-item {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: white;
+    border-radius: 0.5rem;
+}
+
+.Special-item h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.Special-item p {
+    margin-bottom: 0.5rem;
+    color: #666;
+}
