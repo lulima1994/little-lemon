@@ -4,9 +4,9 @@ import restaurantImage from '../images/restaurant.jpg';
 
 function Chicago() {
     return (
-        <section className="Chicago">
+        <section className="Chicago" aria-labelledby="chicago-title">
             <div className="Chicago-content">
-                <h2>About Little Lemon, Chicago</h2>
+                <h2 id="chicago-title">About Little Lemon, Chicago</h2>
                 <p>
                     Nestled in the heart of Chicago, Little Lemon offers a unique dining experience that combines
                     traditional recipes with a modern twist. Established in 1995, the restaurant has been a beloved

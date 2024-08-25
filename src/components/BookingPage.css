@@ -2,15 +2,21 @@
     padding: 2rem;
     max-width: 600px;
     margin: 0 auto;
-    background-color: #f8f8f8;
+    background-color: #EDEFEF;
+    /* Cor neutra da paleta */
     border-radius: 0.5rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    font-family: 'Karla', sans-serif;
+    /* Fonte principal */
 }
 
 .BookingPage h2 {
     text-align: center;
     margin-bottom: 1.5rem;
-    color: #333;
+    color: #495E57;
+    /* Cor principal para o título */
+    font-family: 'Markazi Text', serif;
+    font-size: 2rem;
 }
 
 .booking-form .form-group {
@@ -20,28 +26,50 @@
 .booking-form label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #555;
+    color: #495E57;
+    /* Cor do label */
+    font-weight: bold;
 }
 
-.booking-form input {
+.booking-form input,
+.booking-form select {
     width: 100%;
     padding: 0.5rem;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
     border-radius: 0.25rem;
+    background-color: #FAFAFA;
+    /* Fundo leve */
+    color: #333333;
+    /* Cor do texto */
+    font-family: 'Karla', sans-serif;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+    border-color: #495E57;
+    /* Cor da borda ao focar */
+    outline: none;
+    box-shadow: 0 0 5px rgba(73, 94, 87, 0.5);
 }
 
 .booking-submit {
     display: block;
     width: 100%;
     padding: 0.75rem;
-    color: white;
-    background-color: #28a745;
+    color: #FAFAFA;
+    background-color: #F4CE14;
+    /* Cor primária do botão */
     border: none;
     border-radius: 0.25rem;
     cursor: pointer;
     margin-top: 1rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
 
 .booking-submit:hover {
-    background-color: #218838;
+    background-color: #495E57;
+    /* Cor de hover */
+    color: #FAFAFA;
+    /* Cor do texto no hover */
 }

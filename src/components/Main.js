@@ -2,24 +2,37 @@ import React, { useReducer } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Homepage from './Homepage';
 import BookingPage from './BookingPage';
+import ConfirmedBooking from './ConfirmedBooking';
+import { fetchAPI, submitAPI } from '../api';
 
 function initializeTimes() {
-    return ["17:00", "18:00", "19:00", "20:00", "21:00"];
+    const today = new Date();
+    return fetchAPI(today);
 }
 
 function updateTimes(state, action) {
-    // Por enquanto, retornamos os mesmos horários disponíveis, independentemente da data.
+    if (action.type === 'update') {
+        return fetchAPI(new Date(action.date));
+    }
     return state;
+}
+
+function submitForm(formData, navigate) {
+    const success = submitAPI(formData);
+    if (success) {
+        navigate('/confirmed');
+    }
 }
 
 function Main() {
     const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
 
     return (
-        <main className="App-main">
+        <main className="App-main" aria-label="Main content">
             <Routes>
                 <Route path="/" element={<Homepage />} />
-                <Route path="/booking" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} />} />
+                <Route path="/booking" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm} />} />
+                <Route path="/confirmed" element={<ConfirmedBooking />} />
             </Routes>
         </main>
     );

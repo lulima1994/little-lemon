@@ -1,15 +1,19 @@
 .App-footer {
-    background-color: #333;
-    color: white;
+    background-color: #495E57;
+    /* Cor principal do fundo */
+    color: #FAFAFA;
+    /* Cor do texto */
     display: flex;
     justify-content: space-around;
     padding: 2rem;
     flex-wrap: wrap;
+    font-family: 'Karla', sans-serif;
+    /* Fonte principal */
 }
 
 .App-footer p {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 1rem;
     letter-spacing: 0.05rem;
 }
 
@@ -20,12 +24,18 @@
 }
 
 .App-footer a {
-    color: white;
+    color: #F4CE14;
+    /* Cor dos links */
     text-decoration: none;
     margin-bottom: 0.5rem;
     display: block;
+    font-size: 0.95rem;
+    /* Tamanho ligeiramente maior para melhorar a legibilidade */
+    transition: color 0.3s ease;
 }
 
 .App-footer a:hover {
+    color: #EDEFEF;
+    /* Cor de hover dos links */
     text-decoration: underline;
 }

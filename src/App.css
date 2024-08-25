@@ -8,15 +8,32 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: 'Karla', sans-serif;
+  /* Fonte principal */
+  background-color: #FAFAFA;
+  /* Cor de fundo neutra */
+  color: #333333;
+  /* Cor de texto padrão */
 }
 
 .App-main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  /* Alinhamento ao topo */
   align-items: center;
-  text-align: center;
   width: 100%;
   flex-grow: 1;
-  background-color: goldenrod;
+  padding: 20px;
+  background-color: #EDEFEF;
+  /* Cor de fundo neutra, baseada na paleta */
+  text-align: left;
+  /* Texto alinhado à esquerda para se alinhar melhor com o layout */
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto;
 }

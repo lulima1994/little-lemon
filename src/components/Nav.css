@@ -1,8 +1,22 @@
 .App-nav {
     display: flex;
-    justify-content: center;
-    background-color: #333;
-    padding: 1rem 0;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    /* Alterar para branco */
+    padding: 1rem 2rem;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    /* Adicionar sombra sutil */
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo {
+    height: 50px;
+    /* Diminuir o tamanho do logo */
 }
 
 .App-nav ul {
@@ -14,12 +28,13 @@
 }
 
 .App-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    letter-spacing: 0.05rem;
+    color: #495E57;
+    /* Cor do texto dos links */
+    font-weight: bold;
+    margin-left: 2rem;
 }
 
 .App-nav a:hover {
     text-decoration: underline;
+    color: #EDEFEF;
 }

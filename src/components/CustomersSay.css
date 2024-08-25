@@ -1,7 +1,10 @@
 .CustomersSay {
     padding: 3rem;
-    background-color: #fff3e0;
+    background-color: #EDEFEF;
+    /* Cor neutra do fundo */
     text-align: center;
+    font-family: 'Karla', sans-serif;
+    /* Fonte principal */
 }
 
 .testimonials-container {
@@ -13,11 +16,12 @@
 
 .testimonial-item {
     background-color: white;
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: 0.5rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
     max-width: 300px;
     text-align: left;
+    font-family: 'Karla', sans-serif;
 }
 
 .testimonial-image {
@@ -25,19 +29,29 @@
     height: 80px;
     border-radius: 50%;
     margin-bottom: 1rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    /* Sombra leve para destaque */
 }
 
 .testimonial-content h3 {
     margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-    color: #333;
+    font-size: 1.5rem;
+    /* Tamanho ajustado para destaque */
+    color: #495E57;
+    /* Cor principal */
+    font-family: 'Markazi Text', serif;
+    /* Fonte para o título */
 }
 
 .testimonial-content p {
     margin-bottom: 1rem;
-    color: #666;
+    color: #333333;
+    /* Cor do texto */
+    line-height: 1.6;
+    font-size: 1rem;
 }
 
 .testimonial-rating span {
-    color: gold;
+    color: #F4CE14;
+    /* Cor das estrelas de avaliação */
 }

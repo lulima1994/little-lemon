@@ -3,28 +3,55 @@ form {
     max-width: 300px;
     gap: 20px;
     margin: 0 auto;
+    font-family: 'Karla', sans-serif;
 }
 
 label {
     font-weight: bold;
     margin-bottom: 5px;
+    color: #495E57;
+    /* Cor principal para o texto dos labels */
+    font-size: 1rem;
 }
 
 input,
-select,
-button {
+select {
     padding: 10px;
     font-size: 1rem;
     border-radius: 5px;
     border: 1px solid #ccc;
+    font-family: 'Karla', sans-serif;
+    background-color: #EDEFEF;
+    /* Cor de fundo leve */
+    color: #333333;
+    /* Cor de texto */
+}
+
+input:focus,
+select:focus {
+    border-color: #495E57;
+    /* Cor de borda ao focar no campo */
+    outline: none;
+    box-shadow: 0 0 5px rgba(73, 94, 87, 0.5);
+    /* Efeito de foco */
 }
 
 button {
-    background-color: #333;
-    color: white;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #F4CE14;
+    /* Cor primária do botão */
+    color: #333333;
+    /* Cor do texto no botão */
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #555;
+    background-color: #495E57;
+    /* Cor de hover */
+    color: #FAFAFA;
+    /* Cor de texto ao passar o mouse */
 }

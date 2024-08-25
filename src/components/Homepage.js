@@ -17,11 +17,17 @@ const testimonialsData = [
 
 function Homepage() {
     return (
-        <div className="Homepage">
-            <Specials specials={specialsData} />
-            <CustomersSay testimonials={testimonialsData} />
-            <Chicago />
-        </div>
+        <main className="Homepage">
+            <section aria-labelledby="specials-title">
+                <Specials specials={specialsData} />
+            </section>
+            <section aria-labelledby="testimonials-title">
+                <CustomersSay testimonials={testimonialsData} />
+            </section>
+            <section aria-labelledby="chicago-title">
+                <Chicago />
+            </section>
+        </main>
     );
 }
 
