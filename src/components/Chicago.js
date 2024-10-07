@@ -1,6 +1,6 @@
 import React from 'react';
 import './Chicago.css';
-import restaurantImage from '../images/restaurant.jpg';
+import restaurantImage from '../images/restaurant.svg';
 
 function Chicago() {
     return (

@@ -7,48 +7,36 @@
     padding: 1rem;
     border-radius: 0.5rem;
     background-color: #EDEFEF;
-    /* Cor de fundo neutra */
     font-family: 'Markazi Text', serif;
-    /* Fonte principal para textos */
 }
 
 .CallToAction h1 {
     color: #495E57;
-    /* Cor principal do título */
     font-size: 2.5rem;
-    /* Tamanho de fonte ajustado para destaque */
     margin-bottom: 1rem;
 }
 
 .CallToAction p {
     color: #333333;
-    /* Cor do texto */
     font-family: 'Karla', sans-serif;
-    /* Fonte secundária para o parágrafo */
     margin-bottom: 1.5rem;
 }
 
 .CallToAction button {
     padding: 0.75rem 1.5rem;
     color: #333333;
-    /* Cor do texto no botão */
     background-color: #F4CE14;
-    /* Cor primária do botão */
     border: none;
     border-radius: 0.25rem;
     cursor: pointer;
     box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.1);
-    /* Sombra suave */
     margin: 1rem;
     font-family: 'Karla', sans-serif;
-    /* Fonte do botão */
     font-size: 1rem;
     transition: background-color 0.3s ease;
 }
 
 .CallToAction button:hover {
     background-color: #495E57;
-    /* Cor de hover */
     color: #FAFAFA;
-    /* Cor do texto ao passar o mouse */
 }

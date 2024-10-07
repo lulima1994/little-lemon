@@ -1,26 +1,29 @@
 .Chicago {
     display: flex;
-    flex-direction: row;
     align-items: center;
+    justify-content: center;
     padding: 3rem;
     background-color: #f4f4f4;
+    gap: 3rem;
 }
 
 .Chicago-content {
-    flex: 1;
-    padding-right: 2rem;
+    width: 25%;
 }
 
 .Chicago-content h2 {
-    font-size: 2rem;
+    font-size: 3rem;
     color: #495E57;
     margin-bottom: 1rem;
 }
 
 .Chicago-content p {
-    color: #666;
-    line-height: 1.6;
-    font-size: 1.2rem;
+    color: #000;
+    font-size: 1rem;
+}
+
+.Chicago-image {
+    width: 50%;
 }
 
 .Chicago-image img {

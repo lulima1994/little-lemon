@@ -1,12 +1,14 @@
 .App-nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    background-color: #fff;
-    /* Alterar para branco */
-    padding: 1rem 2rem;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    /* Adicionar sombra sutil */
+    gap: 10rem;
+    background-color: #000;
+    padding: 1rem 1rem;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 9;
 }
 
 .logo-link {
@@ -16,25 +18,21 @@
 
 .nav-logo {
     height: 50px;
-    /* Diminuir o tamanho do logo */
 }
 
 .App-nav ul {
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 .App-nav a {
     color: #495E57;
-    /* Cor do texto dos links */
     font-weight: bold;
-    margin-left: 2rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .App-nav a:hover {
-    text-decoration: underline;
-    color: #EDEFEF;
+    color: #F4CE14;
 }

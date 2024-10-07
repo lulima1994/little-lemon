@@ -1,56 +1,79 @@
 .Specials {
     padding: 3rem;
-    background-color: #f8f8f8;
     text-align: center;
+    font-family: 'Karla';
 }
 
 .Specials h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #495E57;
+    font-family: 'Markazi Text';
+}
+
+.special-items-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
 }
 
 .Special-item {
-    border: 1px solid #ddd;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    background-color: white;
-    border-radius: 0.5rem;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    /* Sombra para destacar os cards */
+    background-color: #FFF;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: left;
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 
 .Special-item:hover {
     transform: translateY(-0.5rem);
-    /* Elevação ao passar o mouse */
 }
 
 .Special-item img {
     width: 100%;
-    /* Adicione uma imagem ao card */
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
+    height: auto;
 }
 
 .Special-item h3 {
     font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 0.5rem;
+    color: #000;
+    font-family: 'Markazi Text';
 }
 
 .Special-item p {
-    color: #666;
-}
-
-.Special-item button {
-    background-color: #F4CE14;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
+    margin: 0.5rem 1rem;
+    color: #333333;
+    font-family: 'Karla';
     font-size: 1rem;
 }
 
-.Special-item button:hover {
-    background-color: #d4b412;
+.Special-item .price {
+    margin: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #EE9972;
+    font-weight: bold;
+    text-align: right;
+}
+
+.Special-item .title-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 1rem;
+}
+
+.Special-item .order-link {
+    margin: 1rem;
+    display: block;
+    color: #495E57;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.Special-item .order-link:hover {
+    color: #FF5733;
+    text-decoration: none;
 }

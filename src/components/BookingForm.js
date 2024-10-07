@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './BookingForm.css';
 
 function BookingForm({ availableTimes = [], dispatch, submitForm }) {
@@ -7,42 +6,51 @@ function BookingForm({ availableTimes = [], dispatch, submitForm }) {
     const [time, setTime] = useState('');
     const [guests, setGuests] = useState(1);
     const [occasion, setOccasion] = useState('');
-    const [isFormValid, setIsFormValid] = useState(true);
-    const navigate = useNavigate();
+
+    const [isDateValid, setIsDateValid] = useState(true);
+    const [isTimeValid, setIsTimeValid] = useState(true);
+    const [isGuestsValid, setIsGuestsValid] = useState(true);
+    const [isOccasionValid, setIsOccasionValid] = useState(true);
 
     const handleDateChange = (e) => {
         setDate(e.target.value);
+        setIsDateValid(true);
         dispatch({ type: 'update', date: e.target.value });
     };
 
     const handleGuestsChange = (e) => {
         const value = e.target.value;
         setGuests(value);
-        if (value < 1) {
-            setIsFormValid(false);
-        } else {
-            setIsFormValid(true);
-        }
+        setIsGuestsValid(value >= 1);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (date && time && guests >= 1) {
+
+        const isDateFilled = !!date;
+        const isTimeFilled = !!time;
+        const isGuestsValid = guests >= 1;
+        const isOccasionFilled = !!occasion;
+
+        setIsDateValid(isDateFilled);
+        setIsTimeValid(isTimeFilled);
+        setIsGuestsValid(isGuestsValid);
+        setIsOccasionValid(isOccasionFilled);
+
+        if (isDateFilled && isTimeFilled && isGuestsValid && isOccasionFilled) {
             const formData = {
                 date,
                 time,
                 guests,
                 occasion,
             };
-            submitForm(formData, navigate);
-        } else {
-            setIsFormValid(false);
+            submitForm(formData);
         }
     };
 
     return (
         <section aria-labelledby="booking-form-title">
-            <form onSubmit={handleSubmit} style={{ display: 'grid', maxWidth: '200px', gap: '20px' }}>
+            <form onSubmit={handleSubmit} noValidate>
                 <fieldset>
                     <legend id="booking-form-title">Booking Form</legend>
 
@@ -52,23 +60,30 @@ function BookingForm({ availableTimes = [], dispatch, submitForm }) {
                         id="res-date"
                         value={date}
                         onChange={handleDateChange}
-                        required
-                        aria-required="true"
+                        className={isDateValid ? '' : 'invalid'}
                     />
+                    {!isDateValid && (
+                        <p style={{ color: 'red' }}>Please choose a date.</p>
+                    )}
 
                     <label htmlFor="res-time">Choose time</label>
                     <select
                         id="res-time"
                         value={time}
-                        onChange={(e) => setTime(e.target.value)}
-                        required
-                        aria-required="true"
+                        onChange={(e) => {
+                            setTime(e.target.value);
+                            setIsTimeValid(true);
+                        }}
+                        className={isTimeValid ? '' : 'invalid'}
                     >
                         <option value="" disabled>Select time</option>
                         {availableTimes.map((t, index) => (
                             <option key={index} value={t}>{t}</option>
                         ))}
                     </select>
+                    {!isTimeValid && (
+                        <p style={{ color: 'red' }}>Please select a time.</p>
+                    )}
 
                     <label htmlFor="guests">Number of guests</label>
                     <input
@@ -78,15 +93,10 @@ function BookingForm({ availableTimes = [], dispatch, submitForm }) {
                         onChange={handleGuestsChange}
                         min="1"
                         max="20"
-                        required
-                        aria-required="true"
-                        aria-invalid={!isFormValid}
-                        aria-describedby="guests-error"
+                        className={isGuestsValid ? '' : 'invalid'}
                     />
-                    {!isFormValid && (
-                        <p id="guests-error" style={{ color: 'red' }}>
-                            Please enter at least one guest.
-                        </p>
+                    {!isGuestsValid && (
+                        <p style={{ color: 'red' }}>Please enter at least one guest.</p>
                     )}
 
                     <label htmlFor="occasion">Occasion</label>
@@ -94,14 +104,17 @@ function BookingForm({ availableTimes = [], dispatch, submitForm }) {
                         id="occasion"
                         value={occasion}
                         onChange={(e) => setOccasion(e.target.value)}
-                        aria-label="Select an occasion"
+                        className={isOccasionValid ? '' : 'invalid'}
                     >
                         <option value="" disabled>Select an occasion</option>
                         <option value="birthday">Birthday</option>
                         <option value="anniversary">Anniversary</option>
                     </select>
+                    {!isOccasionValid && (
+                        <p style={{ color: 'red' }}>Please select an occasion.</p>
+                    )}
 
-                    <button type="submit" disabled={!date || !time || guests < 1} aria-label="Make Reservation">
+                    <button type="submit" aria-label="Make Reservation">
                         Make Reservation
                     </button>
                 </fieldset>
